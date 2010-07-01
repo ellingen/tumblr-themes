@@ -22,6 +22,8 @@
 		<label for="theme-selector">thimble</label>
 		<select name="theme" id="theme-selector">
 			<?php
+				error_reporting (E_ALL ^ E_NOTICE); /* turn off error reporting! */
+			
 				foreach (glob('themes/*.html') as $theme) {
                     $theme = basename($theme);
 					if (($theme !== '.') && ($theme !== '..')) {
